@@ -56,7 +56,7 @@ $ScriptList | ForEach-Object {
 
 
 try{
-    Import-Module CodeCastor.PowerShell.PS2EXE
+    Import-Module PowerShell.Module.Compiler
 
 
     Write-ChannelMessage  "====================================="
