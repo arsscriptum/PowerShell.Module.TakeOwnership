@@ -49,19 +49,27 @@ function Grant-Ownership{
         [ValidateSet('file','reg','srv','shr','wmi')]
         [String]$ObjectType,        
         [Parameter(Mandatory=$false)]
-        [switch]$Recurse
+        [switch]$Recurse,
+		[Parameter(Mandatory=$false)]
+        [switch]$Force
     )    
     try{
 
         if(-not(Test-IsAdministrator)){
             throw "Administrator privileges required"
         }
-        $Advisory = "Are you sure you want to change the Acl/Dacl properties of $Path "
-        if($Recurse){
-            $Advisory += 'and subfolders '
-        }
-        $Advisory += ' (y/N)?'
-        write-host "`t`t`t`t!!! CRITICAL OPERATION WARNING!!!`n" -f DarkRed  -NoNewLine ; $a=Read-Host -Prompt $Advisory ; if($a -notmatch "y") {return;}
+		if($Force -eq $False){
+			$Advisory = "Are you sure you want to change the Acl/Dacl properties of $Path "
+			if($Recurse){
+				$Advisory += 'and subfolders '
+			}
+			$Advisory += ' (y/N)?'
+			write-host "`t`t`t`t!!! CRITICAL OPERATION WARNING!!!`n" -f DarkRed  -NoNewLine ; $a=Read-Host -Prompt $Advisory ; if($a -notmatch "y") {return;}	
+		}else{
+			write-host "[i] Change the Acl/Dacl properties of $Path " -f DarkRed ; 
+		}
+				
+        
         If( $PSBoundParameters.ContainsKey('ObjectType') -eq $True ){
             Write-ChannelMessage " ObjectType $ObjectType"
         }else{
