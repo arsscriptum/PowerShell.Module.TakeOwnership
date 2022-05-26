@@ -1,6 +1,6 @@
 ---
-external help file: CodeCastor.PowerShell.TakeOwnership-help.xml
-Module Name: CodeCastor.PowerShell.TakeOwnership
+external help file: PowerShell.Module.TakeOwnership-help.xml
+Module Name: PowerShell.Module.TakeOwnership
 online version:
 schema: 2.0.0
 ---

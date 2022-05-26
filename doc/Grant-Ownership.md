@@ -1,6 +1,6 @@
 ---
-external help file: CodeCastor.PowerShell.TakeOwnership-help.xml
-Module Name: CodeCastor.PowerShell.TakeOwnership
+external help file: PowerShell.Module.TakeOwnership-help.xml
+Module Name: PowerShell.Module.TakeOwnership
 online version:
 schema: 2.0.0
 ---
@@ -13,7 +13,8 @@ schema: 2.0.0
 ## SYNTAX
 
 ```
-Grant-Ownership [-Path] <String> [-ObjectType <String>] [-Recurse] [-WhatIf] [-Confirm] [<CommonParameters>]
+Grant-Ownership [-Path] <String> [-ObjectType <String>] [-Recurse] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,6 +38,21 @@ Prompts you for confirmation before running the cmdlet.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+{{ Fill Force Description }}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
